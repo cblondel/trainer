@@ -1,3 +1,6 @@
+# Introduce
+This project is to training me to develop angular application with the git flow workflow. It is a simple copy of the [chandermani angular6byexample](https://github.com/chandermani/angular6byexample) github repo. 
+
 # Trainer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.

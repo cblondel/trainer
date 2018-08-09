@@ -10,7 +10,7 @@ export class Exercise {
   ) {}
 }
 
-export class Workout {
+export class WorkoutPlan {
   constructor(
     public name: string,
     public title: string,
@@ -18,6 +18,11 @@ export class Workout {
     public exercises: Array<ExercisePlan>,
     public description?: string
   ) {}
+
+  totalWorkoutDuration(): number {
+    const total = this.exercises.map(x => x.duration).reduce((accumulator, currentValue) => accumulator + currentValue);
+    return (this.restBetweenExercise ? this.restBetweenExercise : 0) * (this.exercises.length - 1) + total;
+  }
 }
 
 export class ExercisePlan {

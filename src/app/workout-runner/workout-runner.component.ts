@@ -36,7 +36,7 @@ export class WorkoutRunnerComponent implements OnInit {
       if (this.exerciseRunningDuration >= this.currentExercise.duration) {
         clearInterval(intervalId);
         const nextExercise = this.getNextExercise();
-        if(nextExercise) {
+        if (nextExercise) {
           this.startExercise(nextExercise);
         } else {
           console.log('Workout complete');

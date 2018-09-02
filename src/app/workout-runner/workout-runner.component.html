@@ -14,4 +14,7 @@
     </div>
     <h1>Time Remaining: {{currentExercise.duration-exerciseRunningDuration}}</h1>
   </div>
+  <div id="video-panel" class="col-sm-3">
+    <cb-video-player [videos]="currentExercise.exercise.video"></cb-video-player>
+  </div>
 </div>

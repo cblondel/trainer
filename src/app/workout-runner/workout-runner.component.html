@@ -3,6 +3,7 @@
     <cb-exercise-description [description]="currentExercise.exercise.description" [steps]="currentExercise.exercise.procedure"></cb-exercise-description>
   </div>
   <div id="exercise-pane" class="col-sm-6">
+    <h4 class="text-center">Workout Remaining - {{ workoutTimeRemaining | secondToTime }}</h4>
     <h1 class="text-center">{{currentExercise.exercise.title}}</h1>
     <div class="image-container row">
       <img class="img-fluid col-sm" [src]="'/assets/images/' + currentExercise.exercise.image" />
@@ -13,6 +14,9 @@
       </div>
     </div>
     <h1>Time Remaining: {{currentExercise.duration-exerciseRunningDuration}}</h1>
+    <h4 class="col-sm-6" *ngIf="currentExercise.exercise.name=='rest'">Next exercise:
+      <strong>{{workoutPlan.exercises[currentExerciseIndex +1].exercise.title}}</strong>
+    </h4>
   </div>
   <div id="video-panel" class="col-sm-3">
     <cb-video-player [videos]="currentExercise.exercise.video"></cb-video-player>
